@@ -1,0 +1,13 @@
+/* Notes hidden */
+aside { display: none; }
+
+/* Notes exposed */
+body.notes aside { display: block; }
+
+body.notes .bespoke-slide {
+	width: 1680px;
+	margin-left: -840px;
+}
+body.notes .bespoke-slide > div.content, body.notes .bespoke-slide > aside {
+	width: 840px;
+}

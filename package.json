@@ -1,0 +1,32 @@
+{
+  "name": "bespoke-notes",
+  "version": "0.1.0",
+  "description": "Bespoke.js side notes presenter",
+  "author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
+  "keywords": [
+    "sniff",
+    "analyze",
+    "ast",
+    "parse",
+    "syntax",
+    "sniffer",
+    "detective",
+    "detect",
+    "find",
+    "search",
+    "source",
+    "code"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/medikoo/bespoke-notes.git"
+  },
+  "dependencies": {
+    "querystring": "0.2.x",
+    "webmake": "~0.3.27"
+  },
+  "peerDependencies": {
+    "bespoke": "0.4.x"
+  },
+  "license": "MIT"
+}

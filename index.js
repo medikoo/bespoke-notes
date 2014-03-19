@@ -12,7 +12,9 @@ module.exports = function (deck/*, options*/) {
 	  , query = location.search ? parse(location.search.slice(1)) : {}
 	  , slideWidth = options.slideWidth;
 
-	if (query.notes != null) visible = !query.notes || Number(query.notes);
+	if (query.notes != null) {
+		visible = !query.notes || Boolean(Number(query.notes));
+	}
 	if (!isNaN(slideWidth) && (slideWidth > 0)) {
 		loadCss('body.notes .bespoke-slide {' +
 			'width: ' + (slideWidth * 2) + 'px;' +

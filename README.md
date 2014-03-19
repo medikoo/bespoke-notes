@@ -20,9 +20,9 @@ bespoke.from(selector, {
     slideWidth: 840 // Slide width, default: 840
 	}
 });
+```
 
 Additionally notes display can be forced via `?notes` query in url search string
-```
 
 ### Installation
 #### npm

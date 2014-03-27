@@ -10,4 +10,4 @@ ass
 nomen
 plusplus
 
-predef+ document, location
+predef+ document, location, history, window

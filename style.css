@@ -5,9 +5,9 @@ aside { display: none; }
 body.notes aside { display: block; }
 
 body.notes .bespoke-slide {
-	width: 1680px;
-	margin-left: -840px;
+	width: 1600px;
+	margin-left: -800px;
 }
 body.notes .bespoke-slide > div.content, body.notes .bespoke-slide > aside {
-	width: 840px;
+	width: 800px;
 }

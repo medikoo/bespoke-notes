@@ -4,7 +4,7 @@ var parse     = require('querystring/decode')
   , stringify = require('querystring/encode')
   , loadCss   = require('webmake/lib/browser/load-css')
 
-  , resolveQuery;
+  , resolveQuery, invokeResize;
 
 require('./style');
 
@@ -15,6 +15,12 @@ resolveQuery = function (token) {
 	if (value == null) return null;
 	if (!value) return true;
 	return Boolean(Number(value));
+};
+
+invokeResize = function () {
+	var event = document.createEvent('HTMLEvents');
+	event.initEvent('resize', true, true);
+	window.dispatchEvent(event);
 };
 
 module.exports = function (deck/*, options*/) {
@@ -52,11 +58,8 @@ module.exports = function (deck/*, options*/) {
 		var query, search, url;
 		if (current === visible) return;
 		current = visible;
-		if (visible) {
-			document.body.classList.add('notes');
-		} else {
-			document.body.classList.remove('notes');
-		}
+		if (visible) document.body.classList.add('notes');
+		else document.body.classList.remove('notes');
 		if (!queryToken) return;
 		url = location.pathname;
 		if (location.search) query = parse(location.search.slice(1));
@@ -64,11 +67,10 @@ module.exports = function (deck/*, options*/) {
 		if (visible) query[queryToken] = null;
 		else delete query[queryToken];
 		search = stringify(query);
-		if (search) {
-			url += '?' + search.replace(/(?:=&)/g, '&').replace(/\=$/, '');
-		}
+		if (search) url += '?' + search.replace(/(?:=&)/g, '&').replace(/\=$/, '');
 		if (location.hash) url += location.hash;
 		history.pushState({}, '', url);
+		invokeResize();
 	};
 
 	document.addEventListener('keydown', function (e) {

@@ -1,6 +1,8 @@
 # bespoke-notes
 ## Notes for [Bespoke.js](https://github.com/markdalgleish/bespoke.js) presentations
 
+<img src="presentation.gif" />
+
 ### Usage
 
 ```javascript

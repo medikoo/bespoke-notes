@@ -1,6 +1,11 @@
+v0.2.1  --  2014.05.01
+* Fix keywords in package.json
+* Improve documentation
+
 v0.2.0  --  2014.04.16
-- Invoke `resize` event on window on notes toggle (it should refresh all feature that depend on slide scalling)
-- Use 800px as default width
+* Invoke `resize` event on window on notes toggle (it should refresh any feature
+  nwhich depends on slide scalling)
+* Use 800px as default width
 
 v0.1.0  --  2014.04.08
 Initial

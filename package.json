@@ -13,6 +13,7 @@
     "url": "git://github.com/medikoo/bespoke-notes.git"
   },
   "dependencies": {
+    "es5-ext": "~0.10.4",
     "querystring": "0.2.x",
     "webmake": "~0.3.29"
   },

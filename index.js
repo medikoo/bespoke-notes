@@ -1,9 +1,11 @@
 'use strict';
 
-var parse     = require('querystring/decode')
-  , stringify = require('querystring/encode')
-  , loadCss   = require('webmake/lib/browser/load-css')
+var primitiveSet = require('es5-ext/object/primitive-set')
+  , parse        = require('querystring/decode')
+  , stringify    = require('querystring/encode')
+  , loadCss      = require('webmake/lib/browser/load-css')
 
+  , ignoredContexts = primitiveSet('input', 'select', 'textarea')
   , resolveQuery, invokeResize;
 
 require('./style');
@@ -76,6 +78,7 @@ module.exports = function (deck/*, options*/) {
 	document.addEventListener('keydown', function (e) {
 		if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
 		if (e.which !== key) return;
+		if (ignoredContexts[e.srcElement.nodeName.toLowerCase()]) return;
 		e.preventDefault();
 
 		update(!current);

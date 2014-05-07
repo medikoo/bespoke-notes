@@ -52,7 +52,7 @@ module.exports = function (deck/*, options*/) {
 			'}' +
 			'body.notes .bespoke-slide > div.content,' +
 			'body.notes .bespoke-slide > aside {' +
-			'width: ' + slideWidth + 'px;' +
+			'width: ' + (slideWidth - 40) + 'px;' +
 			'}');
 	}
 

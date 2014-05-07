@@ -9,5 +9,8 @@ body.notes .bespoke-slide {
 	margin-left: -800px;
 }
 body.notes .bespoke-slide > div.content, body.notes .bespoke-slide > aside {
-	width: 800px;
+	width: 760px;
+}
+body.notes .bespoke-slide > aside {
+	margin-left: 40px;
 }

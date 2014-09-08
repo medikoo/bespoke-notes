@@ -1,6 +1,6 @@
 {
   "name": "bespoke-notes",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Notes for Bespoke.js presentations",
   "author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
   "keywords": [
@@ -15,10 +15,10 @@
   "dependencies": {
     "es5-ext": "~0.10.4",
     "querystring": "0.2.x",
-    "webmake": "~0.3.29"
+    "webmake": "~0.3.35"
   },
   "peerDependencies": {
-    "bespoke": "0.4.x"
+    "bespoke": "1"
   },
   "license": "MIT"
 }

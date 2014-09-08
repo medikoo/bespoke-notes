@@ -14,22 +14,22 @@ See [Asynchronous JavaScript Interfaces](http://medikoo.com/asynchronous-javascr
 ### Usage
 
 ```javascript
-bespoke.plugins.notes = require('bespoke-notes');
+notes = require('bespoke-notes');
 
-bespoke.from(selector, {
-  notes: true
-});
+bespoke.from(selector, [
+  notes()
+]);
 ```
 
 Possible options:
 ```javascript
-bespoke.from(selector, {
-  notes: {
+bespoke.from(selector, [
+  notes({
     key: 0x4e, // Key that toggles notes, default: 0x4e ('n' key)
     visible: false, // Whether to display notes on startup, default: false
     slideWidth: 800 // Slide width, default: 800
-  }
-});
+  })
+]);
 ```
 
 Additionally notes display can be forced via `?notes` query in url search string

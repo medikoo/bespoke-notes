@@ -1,9 +1,10 @@
 {
   "name": "bespoke-notes",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Notes for Bespoke.js presentations",
   "author": "Mariusz Nowak <medyk@medikoo.com> (http://www.medikoo.com/)",
   "keywords": [
+    "bespoke-plugin",
     "presenation",
     "bespoke",
     "notes"

@@ -1,8 +1,8 @@
 'use strict';
 
 var primitiveSet = require('es5-ext/object/primitive-set')
-  , parse        = require('querystring/decode')
-  , stringify    = require('querystring/encode')
+  , parse        = require('querystring2/parse')
+  , stringify    = require('querystring2/stringify')
   , loadCss      = require('webmake/lib/browser/load-css')
 
   , ignoredContexts = primitiveSet('input', 'select', 'textarea')

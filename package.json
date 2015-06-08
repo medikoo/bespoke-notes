@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "es5-ext": "~0.10.4",
-    "querystring": "0.2.x",
+    "querystring2": "1",
     "webmake": "~0.3.35"
   },
   "devDependencies": {

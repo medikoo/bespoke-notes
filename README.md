@@ -14,7 +14,10 @@ See [Asynchronous JavaScript Interfaces](http://medikoo.com/asynchronous-javascr
 ### Usage
 
 ```javascript
+// If your CJS bundler supports CSS modules do:
 notes = require('bespoke-notes');
+// otherwise do following (end ensure that rules from style.css load in your browser)
+notes = require('bespoke-notes/dom');
 
 bespoke.from(selector, [
   notes()

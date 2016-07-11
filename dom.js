@@ -4,6 +4,7 @@ var primitiveSet = require('es5-ext/object/primitive-set')
   , parse        = require('querystring2/parse')
   , stringify    = require('querystring2/stringify')
   , loadCss      = require('webmake/lib/browser/load-css')
+  , classes      = require('bespoke-classes')
 
   , ignoredContexts = primitiveSet('input', 'select', 'textarea')
   , resolveQuery, invokeResize;
@@ -35,6 +36,9 @@ module.exports = function (/*options*/) {
 
 	return function (deck) {
 		var update, current, resolvedQuery;
+
+		/* If `classes` hasn't been initialized jet, do it now */
+		if (!deck.parent.classList.contains('parent')) classes()(deck);
 
 		if (queryToken) {
 			resolvedQuery = resolveQuery(queryToken);

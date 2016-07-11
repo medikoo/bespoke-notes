@@ -76,7 +76,7 @@ module.exports = function (/*options*/) {
 		document.addEventListener('keydown', function (e) {
 			if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
 			if (e.which !== key) return;
-			if (ignoredContexts[e.srcElement.nodeName.toLowerCase()]) return;
+			if (ignoredContexts[e.target.nodeName.toLowerCase()]) return;
 			e.preventDefault();
 
 			update(!current);

@@ -1,4 +1,4 @@
 'use strict';
 
-require('./style');
-module.exports = require('./dom');
+require('./style.css');
+module.exports = require('./dom.js');

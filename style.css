@@ -1,16 +1,18 @@
 /* Notes hidden */
-aside { display: none; }
+.bespoke-slide > aside {
+	box-sizing: border-box;
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 100%;
+	padding-left: 40px;
+}
 
 /* Notes exposed */
-body.notes aside { display: block; }
-
 body.notes .bespoke-slide {
-	width: 1600px;
-	margin-left: -800px;
+	-webkit-transform: scale(.5) translateX(-50%);
+	transform: scale(.5) translateX(-50%);
 }
-body.notes .bespoke-slide > div.content, body.notes .bespoke-slide > aside {
-	width: 760px;
-}
-body.notes .bespoke-slide > aside {
-	margin-left: 40px;
-}
+
+body.notes .bespoke-slide > aside { opacity: 1; }
+

@@ -1,7 +1,7 @@
 sudo: false # http://docs.travis-ci.com/user/workers/container-based-infrastructure/
 language: node_js
 node_js:
-  - 0.12
+  - 6
 
 notifications:
   email:

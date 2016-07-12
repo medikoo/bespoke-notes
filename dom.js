@@ -38,7 +38,7 @@ module.exports = function (/*options*/) {
 		var update, current, resolvedQuery;
 
 		/* If `classes` hasn't been initialized jet, do it now */
-		if (!deck.parent.classList.contains('parent')) classes()(deck);
+		if (!deck.parent.classList.contains('bespoke-parent')) classes()(deck);
 
 		if (queryToken) {
 			resolvedQuery = resolveQuery(queryToken);

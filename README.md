@@ -43,7 +43,6 @@ bespoke.from(selector, [
   notes({
     key: 0x4e, // Key that toggles notes, default: 0x4e ('n' key)
     visible: false, // Whether to display notes on startup, default: false
-    slideWidth: 800 // Slide width, default: 800
   })
 ]);
 ```

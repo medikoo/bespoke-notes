@@ -3,7 +3,6 @@
 var primitiveSet = require('es5-ext/object/primitive-set')
   , parse        = require('querystring2/parse')
   , stringify    = require('querystring2/stringify')
-  , loadCss      = require('webmake/lib/browser/load-css')
   , classes      = require('bespoke-classes')
 
   , ignoredContexts = primitiveSet('input', 'select', 'textarea')
@@ -28,7 +27,6 @@ module.exports = function (/*options*/) {
 	var options = Object(arguments[1])
 	  , visible = Boolean(options.visible)
 	  , key = options.key || 0x4e // 'n' key
-	  , slideWidth = options.slideWidth
 	  , queryToken = 'notes';
 
 	if (options.queryToken === false) queryToken = null;
@@ -46,16 +44,6 @@ module.exports = function (/*options*/) {
 			window.addEventListener('popstate', function () {
 				update(Boolean(resolveQuery(queryToken)));
 			});
-		}
-		if (!isNaN(slideWidth) && (slideWidth > 0)) {
-			loadCss('body.notes .bespoke-slide {' +
-				'width: ' + (slideWidth * 2) + 'px;' +
-				'margin-left: -' + slideWidth + 'px;' +
-				'}' +
-				'body.notes .bespoke-slide > div.content,' +
-				'body.notes .bespoke-slide > aside {' +
-				'width: ' + (slideWidth - 40) + 'px;' +
-				'}');
 		}
 
 		update = function (visible) {

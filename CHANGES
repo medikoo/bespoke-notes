@@ -1,3 +1,8 @@
+v2.0.0  --  2016.07.12
+* Generalize styles (no more need for slideWidth option)
+* Improve Webpack support (thanks @Kriegslustig)
+* Improve documentation
+
 v1.0.0  --  2015.06.08
 * Seclude dom logic, so require of css file is not forced (thanks @posva)
 * Use querystring2 instead of querystring

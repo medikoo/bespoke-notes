@@ -4,6 +4,7 @@ var primitiveSet = require('es5-ext/object/primitive-set')
   , parse        = require('querystring2/parse')
   , stringify    = require('querystring2/stringify')
   , loadCss      = require('webmake/lib/browser/load-css')
+  , classes      = require('bespoke-classes')
 
   , ignoredContexts = primitiveSet('input', 'select', 'textarea')
   , resolveQuery, invokeResize;
@@ -35,6 +36,9 @@ module.exports = function (/*options*/) {
 
 	return function (deck) {
 		var update, current, resolvedQuery;
+
+		/* If `classes` hasn't been initialized jet, do it now */
+		if (!deck.parent.classList.contains('bespoke-parent')) classes()(deck);
 
 		if (queryToken) {
 			resolvedQuery = resolveQuery(queryToken);
@@ -76,7 +80,7 @@ module.exports = function (/*options*/) {
 		document.addEventListener('keydown', function (e) {
 			if (e.altKey || e.ctrlKey || e.metaKey || e.shiftKey) return;
 			if (e.which !== key) return;
-			if (ignoredContexts[e.srcElement.nodeName.toLowerCase()]) return;
+			if (ignoredContexts[e.target.nodeName.toLowerCase()]) return;
 			e.preventDefault();
 
 			update(!current);

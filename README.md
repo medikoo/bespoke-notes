@@ -13,6 +13,19 @@ See [Asynchronous JavaScript Interfaces](http://medikoo.com/asynchronous-javascr
 
 ### Usage
 
+`bespoke-notes` uses `<aside>` elements as notes.
+
+```html
+...
+<section>
+  <h2>My Slide</h2>
+  <aside>
+    <p>My Notes</p>
+  </aside>
+</section>
+...
+```
+
 ```javascript
 // If your CJS bundler supports CSS modules do:
 notes = require('bespoke-notes');

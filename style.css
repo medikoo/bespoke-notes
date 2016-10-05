@@ -7,6 +7,12 @@
 	left: 100%;
 	padding-left: 40px;
 	font-size: 2em;
+	-webkit-transition: opacity 1s ease-in-out;
+	-moz-transition: opacity 1s ease-in-out;
+	-ms-transition: opacity 1s ease-in-out;
+	-o-transition: opacity 1s ease-in-out;
+	transition: opacity 1s ease-in-out;
+	opacity: 0;
 }
 
 /* Notes exposed */
@@ -15,5 +21,11 @@ body.notes .bespoke-slide {
 	transform: scale(.5) translateX(-50%);
 }
 
-body.notes .bespoke-slide > aside { opacity: 1; }
-
+body.notes .bespoke-slide > aside {
+	-webkit-transition: opacity 1s ease-in-out;
+	-moz-transition: opacity 1s ease-in-out;
+	-ms-transition: opacity 1s ease-in-out;
+	-o-transition: opacity 1s ease-in-out;
+	transition: opacity 1s ease-in-out;
+	opacity: 1;
+}

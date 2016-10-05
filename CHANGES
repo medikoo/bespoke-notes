@@ -1,3 +1,6 @@
+v2.0.1  --  2016.10.05
+* Ensure notes are not visible when no in notes mode
+
 v2.0.0  --  2016.07.12
 * Generalize styles (no more need for slideWidth option)
 * Improve Webpack support (thanks @Kriegslustig)

@@ -1,3 +1,8 @@
+v2.1.0  --  2016.10.11
+* Fine tunning scaling of presentation with notes.
+  So far fixed 0.5 was used but it was using best possible screen area.
+  Now scale is computed out of slide and viewport widhts
+
 v2.0.1  --  2016.10.05
 * Ensure notes are not visible when no in notes mode
 

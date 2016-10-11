@@ -3,6 +3,7 @@
 var primitiveSet = require('es5-ext/object/primitive-set')
   , parse        = require('querystring2/parse')
   , stringify    = require('querystring2/stringify')
+  , addStyle     = require('dom-ext/html-document/#/add-style')
   , classes      = require('bespoke-classes')
 
   , ignoredContexts = primitiveSet('input', 'select', 'textarea')
@@ -47,11 +48,28 @@ module.exports = function (/*options*/) {
 		}
 
 		update = function (visible) {
-			var query, search, url;
+			var query, search, url, viewportWidth, zoom, slide, slideWidth, scale, transformCss;
 			if (current === visible) return;
 			current = visible;
-			if (visible) document.body.classList.add('notes');
-			else document.body.classList.remove('notes');
+			if (visible) {
+				document.body.classList.add('notes');
+				viewportWidth = window.innerWidth;
+				slide = document.querySelector('.bespoke-active');
+				zoom = Number(window.getComputedStyle(slide).zoom) || 0;
+				slideWidth = slide.offsetWidth * zoom;
+				if (viewportWidth && slideWidth) {
+					scale = ((viewportWidth / 2) / slideWidth).toFixed(3);
+					transformCss = 'scale(' + scale + ') translateX(-50%)';
+					addStyle.call(document, {
+						'body.notes .bespoke-slide': {
+							'-webkit-transform': transformCss,
+							transform: transformCss
+						}
+					});
+				}
+			} else {
+				document.body.classList.remove('notes');
+			}
 			if (!queryToken) return;
 			url = location.pathname;
 			if (location.search) query = parse(location.search.slice(1));

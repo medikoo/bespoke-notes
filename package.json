@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "bespoke-classes": "1",
+    "dom-ext": "0.0.3",
     "es5-ext": "^0.10.12",
     "querystring2": "1",
     "webmake": "^0.3.40"

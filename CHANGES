@@ -1,3 +1,6 @@
+v2.1.1  --  2016.10.12
+* Ensure lazy slide resolution (without that notes could crash at initialization)
+
 v2.1.0  --  2016.10.11
 * Fine tunning scaling of presentation with notes.
   So far fixed 0.5 was used but it was using best possible screen area.

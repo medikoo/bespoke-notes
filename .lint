@@ -10,4 +10,4 @@ ass
 nomen
 plusplus
 
-predef+ document, location, history, window
+predef+ document, location, history, window, setTimeout

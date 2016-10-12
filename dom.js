@@ -55,17 +55,21 @@ module.exports = function (/*options*/) {
 				document.body.classList.add('notes');
 				viewportWidth = window.innerWidth;
 				slide = document.querySelector('.bespoke-active');
-				zoom = Number(window.getComputedStyle(slide).zoom) || 0;
-				slideWidth = slide.offsetWidth * zoom;
-				if (viewportWidth && slideWidth) {
-					scale = ((viewportWidth / 2) / slideWidth).toFixed(3);
-					transformCss = 'scale(' + scale + ') translateX(-50%)';
-					addStyle.call(document, {
-						'body.notes .bespoke-slide': {
-							'-webkit-transform': transformCss,
-							transform: transformCss
-						}
-					});
+				if (slide) {
+					zoom = Number(window.getComputedStyle(slide).zoom) || 0;
+					slideWidth = slide.offsetWidth * zoom;
+					if (viewportWidth && slideWidth) {
+						scale = ((viewportWidth / 2) / slideWidth).toFixed(3);
+						transformCss = 'scale(' + scale + ') translateX(-50%)';
+						addStyle.call(document, {
+							'body.notes .bespoke-slide': {
+								'-webkit-transform': transformCss,
+								transform: transformCss
+							}
+						});
+					}
+				} else {
+					setTimeout(function () { update(current); }, 300);
 				}
 			} else {
 				document.body.classList.remove('notes');

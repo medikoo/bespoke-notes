@@ -9,5 +9,6 @@ maxlen 100
 ass
 nomen
 plusplus
+vars
 
-predef+ document, location, history, window, setTimeout
+predef+ document, location, history, window, setTimeout, setInterval

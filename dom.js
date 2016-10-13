@@ -7,6 +7,7 @@ var primitiveSet = require('es5-ext/object/primitive-set')
   , classes      = require('bespoke-classes')
 
   , ignoredContexts = primitiveSet('input', 'select', 'textarea')
+  , scaleRe = /^matrix\(([\d\.]+),/
 
   , currentZoom;
 
@@ -25,12 +26,20 @@ var invokeResize = function () {
 	window.dispatchEvent(event);
 };
 
+var getZoom = function (slide) {
+	var zoom = Number(window.getComputedStyle(slide).zoom) || 1, match
+	if (zoom !== 1) return zoom;
+	match = window.getComputedStyle(slide.parentNode).transform.match(scaleRe);
+	if (!match) return 1;
+	return Number(match[1]) || 1;
+};
+
 var updateSlide = function () {
 	var viewportWidth = window.innerWidth
 	  , slide = document.querySelector('.bespoke-active')
 	  , zoom, slideWidth, scale, transformCss;
 	if (slide) {
-		zoom = Number(window.getComputedStyle(slide).zoom) || 1;
+		zoom = getZoom(slide);
 		if (zoom === currentZoom) return;
 		currentZoom = zoom;
 		slideWidth = slide.offsetWidth * zoom;

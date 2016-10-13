@@ -6,10 +6,9 @@ var primitiveSet = require('es5-ext/object/primitive-set')
   , addStyle     = require('dom-ext/html-document/#/add-style')
   , classes      = require('bespoke-classes')
 
-  , ignoredContexts = primitiveSet('input', 'select', 'textarea')
-  , resolveQuery, invokeResize;
+  , ignoredContexts = primitiveSet('input', 'select', 'textarea');
 
-resolveQuery = function (token) {
+var resolveQuery = function (token) {
 	var value;
 	if (!location.search) return null;
 	value = parse(location.search.slice(1))[token];
@@ -18,7 +17,7 @@ resolveQuery = function (token) {
 	return Boolean(Number(value));
 };
 
-invokeResize = function () {
+var invokeResize = function () {
 	var event = document.createEvent('HTMLEvents');
 	event.initEvent('resize', true, true);
 	window.dispatchEvent(event);

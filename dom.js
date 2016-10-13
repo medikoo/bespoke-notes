@@ -27,7 +27,7 @@ var invokeResize = function () {
 };
 
 var getZoom = function (slide) {
-	var zoom = Number(window.getComputedStyle(slide).zoom) || 1, match
+	var zoom = Number(window.getComputedStyle(slide).zoom) || 1, match;
 	if (zoom !== 1) return zoom;
 	match = window.getComputedStyle(slide.parentNode).transform.match(scaleRe);
 	if (!match) return 1;

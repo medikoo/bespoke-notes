@@ -29,7 +29,7 @@ See [Asynchronous JavaScript Interfaces](http://medikoo.com/asynchronous-javascr
 ```javascript
 // If your CJS bundler supports CSS modules do:
 notes = require('bespoke-notes');
-// otherwise do following (end ensure that rules from style.css load in your browser)
+// otherwise do following (and aside ensure that rules from style.css are loaded in your browser)
 notes = require('bespoke-notes/dom');
 
 bespoke.from(selector, [
@@ -41,8 +41,8 @@ Possible options:
 ```javascript
 bespoke.from(selector, [
   notes({
-    key: 0x4e, // Key that toggles notes, default: 0x4e ('n' key)
-    visible: false, // Whether to display notes on startup, default: false
+    key: 0x4e, // (optional) Key that toggles notes, defaults to 'n'
+    visible: false, // (optional) Whether to display notes on startup
   })
 ]);
 ```
